@@ -33,3 +33,150 @@ body {
             #2a2929 100%);
     color: #fff;
 }
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 45px;
+    position: relative;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 2;
+}
+
+.header-left h2 {
+    font-size: 23px;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.header-left p {
+    font-size: 12px;
+    color: #b19b9b;
+    letter-spacing: 1px;
+}
+
+.header-mid {
+    position: fixed;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    background: rgba(20, 15, 15, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+
+.header-mid a {
+    position: relative;
+    padding: 12px 25px;
+    color: #b5a5a5;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.header-mid a.active {
+    color: #fff;
+    background: rgba(125, 65, 65, 0.25);
+    box-shadow: inset 0 0 15px rgba(150, 70, 70, 0.12);
+}
+
+.header-mid a.active::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 35%;
+    width: 30%;
+    height: 2px;
+    background: #c58b8b;
+    border-radius: 50px;
+    box-shadow: 0 0 8px #a84c4c, 0 0 16px rgba(168, 76, 76, 0.6);
+}
+
+.header-mid a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 2;
+}
+
+#img-escape {
+    width: 115px;
+    height: auto;
+    object-fit: contain;
+}
+
+#img-pin {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+    opacity: 0.8;
+}
+
+.header-right p {
+    font-size: 13px;
+    color: #c5b5b5;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 20px;
+        align-items: flex-start;
+    }
+
+    .header-left h2 {
+        font-size: 18px;
+    }
+
+    .header-left p {
+        font-size: 10px;
+    }
+
+    .header-mid {
+        top: 85px;
+    }
+
+    .header-mid a {
+        padding: 10px 17px;
+        font-size: 12px;
+    }
+
+    #img-escape {
+        width: 75px;
+    }
+
+    #img-pin {
+        width: 14px;
+        height: 14px;
+    }
+
+    .header-right {
+        gap: 6px;
+    }
+
+    .header-right p {
+        font-size: 11px;
+    }
+}
